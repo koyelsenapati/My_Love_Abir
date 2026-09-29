@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d7efff">
+    <meta name="description" content="Little surprises made with love, just for Abir.">
+
+    <title>Little Surprises | For My Abir ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        /* =========================
+           BASE
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #18549a;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        body.popup-open {
+            overflow: hidden;
+        }
+
+        /* =========================
+           PAGE BACKGROUND
+        ========================= */
+
+        .surprises-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+
+            background-color: #fffaf0;
+            background-image: url("../img/surprises.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+            overflow: hidden;
+        }
+
+        .surprises-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+
+            background: rgba(255, 250, 240, 0.60);
+            pointer-events: none;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .surprises-container {
+            width: min(100%, 1100px);
+            margin: 0 auto;
+            padding: 35px 25px 45px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .surprise-heading {
+            text-align: center;
+            margin: 0 auto 35px;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .surprise-heading h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: #1759a4;
+        }
+
+        .heading-heart {
+            display: block;
+            margin-top: 3px;
+            font-size: 21px;
+            color: #2677c0;
+        }
+
+        .surprise-heading p {
+            margin-top: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #285e91;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           GIFT GRID
+        ========================= */
+
+        .surprise-grid {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        /* =========================
+           GIFT CARDS
+        ========================= */
+
+        .surprise-card {
+            min-height: 265px;
+            padding: 25px 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            position: relative;
+
+            background: rgba(255, 253, 246, 0.94);
+            border: 2px solid #c4def2;
+            border-radius: 18px;
+
+            box-shadow: 0 7px 20px rgba(57, 105, 150, 0.13);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .surprise-card:hover {
+            transform: translateY(-7px);
+            border-color: #82b8e0;
+            box-shadow: 0 13px 28px rgba(57, 105, 150, 0.20);
+        }
+
+        .surprise-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .surprise-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .surprise-card:nth-child(4) {
+            animation-delay: 0.15s;
+        }
+
+        .surprise-card:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .surprise-card:nth-child(6) {
+            animation-delay: 0.45s;
+        }
+
+        .card-number {
+            position: absolute;
+            top: 13px;
+            left: 15px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #6193be;
+        }
+
+        .card-heart {
+            position: absolute;
+            top: 13px;
+            right: 15px;
+
+            font-size: 16px;
+            color: #e5ad28;
+        }
+
+        /* =========================
+           GIFT BUTTON
+        ========================= */
+
+        .gift-button {
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 10px auto 18px;
+
+            background: linear-gradient(145deg, #d5ecff, #a6d0f2);
+            border: 2px solid #91bde2;
+            border-radius: 50%;
+
+            color: #286da8;
+            font-size: 42px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 12px rgba(65, 122, 173, 0.15);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease;
+
+            animation: giftBounce 2s ease-in-out infinite;
+        }
+
+        .gift-button:hover {
+            transform: scale(1.1) rotate(-5deg);
+            background: linear-gradient(145deg, #e2f3ff, #b4dafa);
+            animation-play-state: paused;
+        }
+
+        .gift-button:focus-visible,
+        .open-label:focus-visible,
+        .close-popup:focus-visible {
+            outline: 3px solid #286da8;
+            outline-offset: 5px;
+        }
+
+        .surprise-card h2 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 24px;
+            font-weight: 400;
+            color: #1759a4;
+            margin-bottom: 8px;
+        }
+
+        .surprise-card p {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #426e98;
+            margin-bottom: 17px;
+        }
+
+        /* =========================
+           OPEN GIFT LABEL
+        ========================= */
+
+        .open-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+
+            padding: 9px 18px;
+
+            border-radius: 30px;
+            background: #e1f1ff;
+            border: 1px solid #a5cde9;
+
+            color: #205f9a;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .open-label:hover {
+            background: #cbe7fc;
+            transform: scale(1.04);
+        }
+
+        /* =========================
+           FOREVER BUTTON
+        ========================= */
+
+        .forever-navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 40px auto 0;
+            padding: 0 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .forever-navigation .welcome-button {
+            margin-top: 0;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        /* =========================
+           DECORATIVE FLOWERS
+        ========================= */
+
+        .flower-decoration {
+            position: absolute;
+            font-size: 30px;
+            color: #e5b72d;
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .flower-one {
+            top: 150px;
+            left: 30px;
+            transform: rotate(-15deg);
+        }
+
+        .flower-two {
+            top: 350px;
+            right: 35px;
+            transform: rotate(15deg);
+        }
+
+        .flower-three {
+            bottom: 100px;
+            left: 12%;
+            transform: rotate(20deg);
+        }
+
+        .flower-four {
+            bottom: 70px;
+            right: 12%;
+            transform: rotate(-20deg);
+        }
+
+        /* =========================
+           POPUP OVERLAY
+        ========================= */
+
+        .surprise-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(21, 52, 85, 0.30);
+
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .surprise-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* =========================
+           POPUP BOX
+        ========================= */
+
+        .surprise-popup {
+            width: 100%;
+            max-width: 440px;
+
+            max-height: 85vh;
+            overflow-y: auto;
+
+            padding: 35px 30px 30px;
+            position: relative;
+
+            background: #fffaf0;
+            border: 2px solid #c2dff5;
+            border-radius: 20px;
+
+            box-shadow: 0 15px 50px rgba(15, 49, 83, 0.25);
+
+            text-align: center;
+
+            transform: translateY(20px) scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .surprise-overlay.show .surprise-popup {
+            transform: translateY(0) scale(1);
+        }
+
+        /* =========================
+           CLOSE BUTTON
+        ========================= */
+
+        .close-popup {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #b6d4ec;
+            border-radius: 50%;
+
+            background: #e6f4ff;
+            color: #205f9a;
+            font-size: 17px;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .close-popup:hover {
+            background: #cce8fb;
+            transform: rotate(90deg);
+        }
+
+        /* =========================
+           POPUP CONTENT
+        ========================= */
+
+        .popup-icon {
+            font-size: 45px;
+            color: #e3b12c;
+            margin-bottom: 15px;
+        }
+
+        .popup-title {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 32px;
+            font-weight: 400;
+            color: #1759a4;
+            margin-bottom: 15px;
+        }
+
+        .popup-message {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 19px;
+            line-height: 1.8;
+            color: #356b9c;
+            white-space: pre-line;
+        }
+
+        .popup-heart {
+            margin-top: 20px;
+            color: #e5ad28;
+            font-size: 25px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .surprise-footer {
+            text-align: center;
+            margin-top: 40px;
+
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+            color: #2b6da8;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .surprise-footer span {
+            color: #e5aa19;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes giftBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+            .surprises-container {
+                padding: 30px 20px 40px;
+            }
+
+            .surprise-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .surprise-card {
+                min-height: 250px;
+            }
+
+            .flower-one {
+                left: 10px;
+            }
+
+            .flower-two {
+                right: 10px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+            .surprises-page {
+                background-attachment: scroll;
+            }
+
+            .surprises-container {
+                padding: 25px 18px 35px;
+            }
+
+            .surprise-heading {
+                margin-bottom: 25px;
+            }
+
+            .surprise-heading h1 {
+                font-size: 38px;
+            }
+
+            .surprise-heading p {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .surprise-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+                gap: 20px;
+            }
+
+            .surprise-card {
+                min-height: 235px;
+                padding: 25px 20px;
+            }
+
+            .gift-button {
+                width: 90px;
+                height: 90px;
+                font-size: 37px;
+            }
+
+            .surprise-card h2 {
+                font-size: 23px;
+            }
+
+            .surprise-card p {
+                font-size: 13px;
+            }
+
+            .forever-navigation {
+                margin-top: 32px;
+            }
+
+            .forever-navigation .welcome-button {
+                min-width: 200px;
+            }
+
+            .surprise-popup {
+                padding: 35px 22px 25px;
+                max-height: 80vh;
+            }
+
+            .popup-title {
+                font-size: 28px;
+            }
+
+            .popup-message {
+                font-size: 18px;
+            }
+
+            .flower-decoration {
+                font-size: 22px;
+            }
+
+            .flower-one {
+                top: 100px;
+                left: 5px;
+            }
+
+            .flower-two {
+                top: 400px;
+                right: 5px;
+            }
+
+            .surprise-footer {
+                font-size: 16px;
+            }
+        }
+
+        /* =========================
+           EXTRA SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 380px) {
+            .surprises-container {
+                padding: 22px 13px 30px;
+            }
+
+            .surprise-heading h1 {
+                font-size: 34px;
+            }
+
+            .surprise-card {
+                padding: 22px 16px;
+            }
+
+            .forever-navigation .welcome-button {
+                min-width: 185px;
+            }
+
+            .popup-title {
+                font-size: 26px;
+            }
+
+            .popup-message {
+                font-size: 17px;
+            }
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .surprise-card,
+            .surprise-heading,
+            .gift-button {
+                animation: none;
+            }
+
+            .surprise-card,
+            .gift-button,
+            .surprise-popup,
+            .surprise-overlay {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="surprises-page">
+
+        <!-- NAVBAR -->
+
+        <header class="navbar">
+
+            <a href="welcome.html" class="nav-brand">
+                <span class="brand-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <span>For My Abir ♡</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="welcome.html">Home</a>
+                <a href="story.html">Story</a>
+                <a href="letter.html">Letter</a>
+                <a href="memories.html">Memories</a>
+                <a href="surprises.html" class="active">Surprises</a>
+                <a href="forever.html">Forever</a>
+            </nav>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </header>
+
+        <div class="blur-layer" id="blurLayer"></div>
+
+        <!-- DECORATIVE FLOWERS -->
+
+        <span class="flower-decoration flower-one" aria-hidden="true">✿</span>
+        <span class="flower-decoration flower-two" aria-hidden="true">✿</span>
+        <span class="flower-decoration flower-three" aria-hidden="true">✿</span>
+        <span class="flower-decoration flower-four" aria-hidden="true">✿</span>
+
+        <!-- MAIN CONTENT -->
+
+        <main class="surprises-container">
+
+            <section class="surprise-heading">
+
+                <h1>Little Surprises</h1>
+
+                <span class="heading-heart">♡</span>
+
+                <p>
+                    A few little things, made with all my love...
+                    <br>
+                    Open each gift, my favorite person. ♡
+                </p>
+
+            </section>
+
+            <!-- SIX GIFT CARDS -->
+
+            <section class="surprise-grid">
+
+                <!-- GIFT 1 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 01</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="0"
+                        type="button"
+                        aria-label="Open gift one">
+
+                        <i class="fa-solid fa-gift"></i>
+                    </button>
+
+                    <h2>A Little Love Note</h2>
+
+                    <p>A tiny message from my heart, just for you.</p>
+
+                    <button class="open-label" data-gift="0" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+                <!-- GIFT 2 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 02</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="1"
+                        type="button"
+                        aria-label="Open gift two">
+
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
+
+                    <h2>Why I Love You</h2>
+
+                    <p>A few little reasons why you're my favorite.</p>
+
+                    <button class="open-label" data-gift="1" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+                <!-- GIFT 3 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 03</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="2"
+                        type="button"
+                        aria-label="Open gift three">
+
+                        <i class="fa-solid fa-star"></i>
+                    </button>
+
+                    <h2>A Promise for Us</h2>
+
+                    <p>A little promise for all our tomorrows.</p>
+
+                    <button class="open-label" data-gift="2" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+                <!-- GIFT 4 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 04</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="3"
+                        type="button"
+                        aria-label="Open gift four">
+
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <h2>Our Little World</h2>
+
+                    <p>If I could pause time, I'd stay in our little moments.</p>
+
+                    <button class="open-label" data-gift="3" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+                <!-- GIFT 5 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 05</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="4"
+                        type="button"
+                        aria-label="Open gift five">
+
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </button>
+
+                    <h2>Our Future Memories</h2>
+
+                    <p>For all the places we'll go and memories we'll make.</p>
+
+                    <button class="open-label" data-gift="4" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+                <!-- GIFT 6 -->
+
+                <article class="surprise-card">
+                    <span class="card-number">GIFT 06</span>
+                    <span class="card-heart">♡</span>
+
+                    <button
+                        class="gift-button"
+                        data-gift="5"
+                        type="button"
+                        aria-label="Open gift six">
+
+                        <i class="fa-solid fa-infinity"></i>
+                    </button>
+
+                    <h2>My Forever Promise</h2>
+
+                    <p>One little promise, with all my heart.</p>
+
+                    <button class="open-label" data-gift="5" type="button">
+                        Open your gift
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </article>
+
+            </section>
+
+            <!-- FOREVER BUTTON -->
+
+            <div class="forever-navigation">
+
+                <a style="color: #1759a4;" href="forever.html" class="welcome-button">
+                    <span>Forever &amp; Always</span>
+                    <span class="welcome-arrow">→</span>
+                </a>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <footer class="surprise-footer">
+                Made with <span>♥</span> for my Abir
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- SURPRISE POPUP -->
+
+    <div
+        class="surprise-overlay"
+        id="surpriseOverlay"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-labelledby="popupTitle">
+
+        <div class="surprise-popup" id="surprisePopup">
+
+            <button
+                class="close-popup"
+                id="closePopup"
+                type="button"
+                aria-label="Close surprise">
+
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="popup-icon" id="popupIcon" aria-hidden="true">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <h2 class="popup-title" id="popupTitle">
+                A Little Surprise
+            </h2>
+
+            <p class="popup-message" id="popupMessage"></p>
+
+            <div class="popup-heart" aria-hidden="true">♡</div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        /* =========================
+           NAVBAR FUNCTIONALITY
+        ========================= */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        const blurLayer = document.getElementById("blurLayer");
+
+        function closeMenu() {
+            navLinks.classList.remove("open");
+            blurLayer.classList.remove("show");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+
+        menuToggle.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("open");
+
+            blurLayer.classList.toggle("show", isOpen);
+
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        blurLayer.addEventListener("click", closeMenu);
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+        });
+
+        /* =========================
+           SURPRISE DATA
+        ========================= */
+
+        const surprises = [
+            {
+                title: "A Little Love Note",
+                icon: "fa-solid fa-envelope",
+                message:
+                    "My dearest Abir, ♡\n\n" +
+                    "If I could give you one thing in this world, " +
+                    "it would be the ability to see yourself through my eyes.\n\n" +
+                    "Then you would know how special you are to me, " +
+                    "how much happiness you bring into my life, " +
+                    "and how deeply you are loved.\n\n" +
+                    "You are my favorite notification, " +
+                    "my favorite smile, and my favorite person.\n\n" +
+                    "I love you, always. ♡"
+            },
+
+            {
+                title: "Why I Love You",
+                icon: "fa-solid fa-heart",
+                message:
+                    "I love you because...\n\n" +
+                    "♡ You make me smile even on my difficult days.\n\n" +
+                    "♡ Your presence makes everything feel a little warmer.\n\n" +
+                    "♡ I can be completely myself with you.\n\n" +
+                    "♡ Even the smallest moments with you become my favorite memories.\n\n" +
+                    "And most importantly...\n\n" +
+                    "I love you simply because you are YOU. ♡"
+            },
+
+            {
+                title: "A Promise for Us",
+                icon: "fa-solid fa-star",
+                message:
+                    "My promise to you, Abir. ♡\n\n" +
+                    "I promise to keep choosing us, " +
+                    "even on the ordinary days.\n\n" +
+                    "I promise to listen, to understand, " +
+                    "and to keep growing with you.\n\n" +
+                    "I promise to celebrate your little wins, " +
+                    "support your dreams, and make beautiful memories together.\n\n" +
+                    "One day at a time, one memory at a time...\n\n" +
+                    "Here's to our story and all the chapters yet to come. ♡"
+            },
+
+            {
+                title: "Our Little World",
+                icon: "fa-solid fa-moon",
+                message:
+                    "If I could pause time, Abir... ♡\n\n" +
+                    "I'd pause it in the little moments with you.\n\n" +
+                    "The random conversations, the silly jokes, " +
+                    "the quiet moments, and the way you make me smile.\n\n" +
+                    "I don't need every day to be perfect.\n\n" +
+                    "I just want more days with you, " +
+                    "making our own little world together.\n\n" +
+                    "You are my favorite place to be. ♡"
+            },
+
+            {
+                title: "Our Future Memories",
+                icon: "fa-solid fa-camera-retro",
+                message:
+                    "Here's to all the memories we haven't made yet. ♡\n\n" +
+                    "The places we'll visit, the foods we'll try, " +
+                    "the photos we'll take, and the little adventures we'll share.\n\n" +
+                    "I want to laugh with you until our stomachs hurt, " +
+                    "take silly pictures, and collect moments we'll remember forever.\n\n" +
+                    "Wherever life takes us, " +
+                    "I hope we keep finding new reasons to smile together.\n\n" +
+                    "Our story is still being written, my love. ♡"
+            },
+
+            {
+                title: "My Forever Promise",
+                icon: "fa-solid fa-infinity",
+                message:
+                    "My Abir, my favorite person. ♡\n\n" +
+                    "I can't promise that every day will be easy, " +
+                    "but I can promise to keep showing up with love.\n\n" +
+                    "I promise to respect you, listen to you, " +
+                    "support your dreams, and celebrate your happiness.\n\n" +
+                    "I want to keep learning about you, " +
+                    "growing beside you, and choosing us one day at a time.\n\n" +
+                    "This is my little promise from the deepest part of my heart:\n\n" +
+                    "You are loved, today and in all the tomorrows we get. ♡"
+            }
+        ];
+
+        /* =========================
+           POPUP ELEMENTS
+        ========================= */
+
+        const surpriseOverlay = document.getElementById("surpriseOverlay");
+        const surprisePopup = document.getElementById("surprisePopup");
+        const popupTitle = document.getElementById("popupTitle");
+        const popupMessage = document.getElementById("popupMessage");
+        const popupIcon = document.getElementById("popupIcon");
+        const closePopupButton = document.getElementById("closePopup");
+
+        let previousFocusedElement = null;
+
+        /* =========================
+           OPEN SURPRISE
+        ========================= */
+
+        document.querySelectorAll("[data-gift]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const giftIndex = Number(this.dataset.gift);
+                const gift = surprises[giftIndex];
+
+                if (!gift) return;
+
+                previousFocusedElement = this;
+
+                popupTitle.textContent = gift.title;
+                popupMessage.textContent = gift.message;
+
+                // Use the icon class from the local gift data.
+                popupIcon.innerHTML = "";
+
+                const iconElement = document.createElement("i");
+                iconElement.className = gift.icon;
+
+                popupIcon.appendChild(iconElement);
+
+                surpriseOverlay.classList.add("show");
+                surpriseOverlay.setAttribute("aria-hidden", "false");
+
+                document.body.classList.add("popup-open");
+
+                closePopupButton.focus();
+            });
+        });
+
+        /* =========================
+           CLOSE SURPRISE
+        ========================= */
+
+        function closeSurprise() {
+            if (!surpriseOverlay.classList.contains("show")) {
+                return;
+            }
+
+            surpriseOverlay.classList.remove("show");
+            surpriseOverlay.setAttribute("aria-hidden", "true");
+
+            document.body.classList.remove("popup-open");
+
+            if (previousFocusedElement) {
+                previousFocusedElement.focus();
+                previousFocusedElement = null;
+            }
+        }
+
+        closePopupButton.addEventListener("click", closeSurprise);
+
+        surpriseOverlay.addEventListener("click", function (event) {
+            if (event.target === surpriseOverlay) {
+                closeSurprise();
+            }
+        });
+
+        /* =========================
+           ESCAPE KEY
+        ========================= */
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeMenu();
+                closeSurprise();
+            }
+        });
+
+        /* =========================
+           POPUP FOCUS MANAGEMENT
+        ========================= */
+
+        surpriseOverlay.addEventListener("keydown", function (event) {
+            if (event.key !== "Tab") return;
+
+            const focusableElements = surprisePopup.querySelectorAll(
+                'button:not([disabled]), a[href], input:not([disabled]), ' +
+                'select:not([disabled]), textarea:not([disabled]), ' +
+                '[tabindex]:not([tabindex="-1"])'
+            );
+
+            const focusable = Array.from(focusableElements).filter(function (element) {
+                return element.offsetParent !== null;
+            });
+
+            if (focusable.length === 0) {
+                event.preventDefault();
+                closePopupButton.focus();
+                return;
+            }
+
+            const firstElement = focusable[0];
+            const lastElement = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === firstElement) {
+                event.preventDefault();
+                lastElement.focus();
+            } else if (
+                !event.shiftKey &&
+                document.activeElement === lastElement
+            ) {
+                event.preventDefault();
+                firstElement.focus();
+            }
+        });
+
+        /* =========================
+           DESKTOP NAV RESIZE
+        ========================= */
+
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

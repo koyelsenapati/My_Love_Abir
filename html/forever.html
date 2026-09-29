@@ -1,0 +1,1629 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d7efff">
+
+    <title>Forever & Always | For My Abir ♡</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Shared Navbar CSS -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+
+        /* =========================
+           GLOBAL RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #18549a;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================
+           PAGE BACKGROUND
+        ========================= */
+
+        .forever-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+
+            background-color: #fffaf0;
+
+            background-image: url("../img/forever.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
+        .forever-container {
+            width: min(100%, 1100px);
+
+            margin: 0 auto;
+
+            padding: 35px 25px 50px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .forever-hero {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 45px;
+
+            animation: fadeUp 0.9s ease both;
+        }
+
+        .forever-small-heading {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 9px 20px;
+
+            margin-bottom: 20px;
+
+            background: rgba(225, 241, 255, 0.90);
+
+            border: 1px solid #b6d5ee;
+            border-radius: 30px;
+
+            color: #286da8;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+        }
+
+        .forever-small-heading i {
+            color: #e5ad28;
+        }
+
+        .forever-hero h1 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: clamp(45px, 7vw, 76px);
+            font-weight: 400;
+
+            line-height: 1.15;
+
+            color: #1759a4;
+
+            margin-bottom: 10px;
+        }
+
+        .forever-hero h1 span {
+            color: #e2ad2a;
+        }
+
+        .hero-heart {
+            display: block;
+
+            color: #e5ad28;
+
+            font-size: 25px;
+
+            margin: 12px 0 18px;
+
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .forever-hero p {
+            max-width: 600px;
+
+            margin: 0 auto;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            line-height: 1.9;
+
+            color: #356b9c;
+        }
+
+        /* =========================
+           LOVE QUOTE CARD
+        ========================= */
+
+        .forever-quote {
+            width: 100%;
+            max-width: 780px;
+
+            margin: 0 auto 45px;
+
+            padding: 38px 35px;
+
+            text-align: center;
+
+            background: rgba(255, 253, 246, 0.94);
+
+            border: 2px solid #c4def2;
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 30px rgba(57, 105, 150, 0.13);
+
+            animation: fadeUp 0.9s ease both;
+            animation-delay: 0.15s;
+        }
+
+        .quote-icon {
+            font-size: 35px;
+
+            color: #e5ad28;
+
+            margin-bottom: 18px;
+        }
+
+        .forever-quote h2 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: clamp(27px, 4vw, 38px);
+            font-weight: 400;
+
+            line-height: 1.3;
+
+            color: #1759a4;
+
+            margin-bottom: 20px;
+        }
+
+        .forever-quote p {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 20px;
+
+            line-height: 1.9;
+
+            color: #426e98;
+        }
+
+        .quote-signature {
+            display: block;
+
+            margin-top: 22px;
+
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 23px;
+
+            color: #286da8;
+        }
+
+        .quote-signature span {
+            color: #e5ad28;
+        }
+
+        /* =========================
+           PROMISES SECTION
+        ========================= */
+
+        .promise-section {
+            margin: 0 auto 45px;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 30px;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .section-heading h2 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: clamp(34px, 5vw, 46px);
+            font-weight: 400;
+
+            color: #1759a4;
+        }
+
+        .section-heading span {
+            display: block;
+
+            margin-top: 5px;
+
+            font-size: 19px;
+
+            color: #e5ad28;
+        }
+
+        .section-heading p {
+            margin-top: 10px;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            line-height: 1.7;
+
+            color: #356b9c;
+        }
+
+        /* =========================
+           PROMISE GRID
+        ========================= */
+
+        .promise-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            gap: 22px;
+
+            width: 100%;
+            max-width: 950px;
+
+            margin: 0 auto;
+        }
+
+        /* =========================
+           PROMISE CARD
+        ========================= */
+
+        .promise-card {
+            min-height: 220px;
+
+            padding: 28px 22px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background: rgba(255, 253, 246, 0.94);
+
+            border: 2px solid #c4def2;
+            border-radius: 18px;
+
+            box-shadow:
+                0 7px 20px rgba(57, 105, 150, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .promise-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #82b8e0;
+
+            box-shadow:
+                0 13px 28px rgba(57, 105, 150, 0.19);
+        }
+
+        .promise-card:nth-child(2) {
+            animation-delay: 0.12s;
+        }
+
+        .promise-card:nth-child(3) {
+            animation-delay: 0.24s;
+        }
+
+        .promise-card:nth-child(4) {
+            animation-delay: 0.36s;
+        }
+
+        .promise-card:nth-child(5) {
+            animation-delay: 0.48s;
+        }
+
+        .promise-card:nth-child(6) {
+            animation-delay: 0.60s;
+        }
+
+        .promise-icon {
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 18px;
+
+            background: linear-gradient(
+                145deg,
+                #d5ecff,
+                #a6d0f2
+            );
+
+            border: 2px solid #91bde2;
+            border-radius: 50%;
+
+            color: #286da8;
+
+            font-size: 28px;
+
+            box-shadow:
+                0 5px 12px rgba(65, 122, 173, 0.13);
+        }
+
+        .promise-card h3 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 25px;
+            font-weight: 400;
+
+            color: #1759a4;
+
+            margin-bottom: 10px;
+        }
+
+        .promise-card p {
+            font-size: 13px;
+            font-weight: 500;
+
+            line-height: 1.8;
+
+            color: #426e98;
+        }
+
+        /* =========================
+           LOVE LETTER SECTION
+        ========================= */
+
+        .forever-letter {
+            width: 100%;
+            max-width: 780px;
+
+            margin: 0 auto 45px;
+
+            padding: 35px 35px 32px;
+
+            background: rgba(255, 253, 246, 0.95);
+
+            border: 2px solid #c4def2;
+            border-radius: 22px;
+
+            box-shadow:
+                0 10px 30px rgba(57, 105, 150, 0.13);
+
+            text-align: center;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .letter-top-icon {
+            font-size: 38px;
+
+            color: #e5ad28;
+
+            margin-bottom: 15px;
+        }
+
+        .forever-letter h2 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: clamp(30px, 4vw, 40px);
+            font-weight: 400;
+
+            color: #1759a4;
+
+            margin-bottom: 20px;
+        }
+
+        .letter-content {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 20px;
+
+            line-height: 1.95;
+
+            color: #426e98;
+
+            white-space: pre-line;
+        }
+
+        .letter-signature {
+            margin-top: 22px;
+
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 24px;
+
+            color: #286da8;
+        }
+
+        .letter-signature span {
+            color: #e5ad28;
+        }
+
+        /* =========================
+           FOREVER BUTTON SECTION
+        ========================= */
+
+        .forever-button-section {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 40px;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .forever-button-section h2 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: clamp(30px, 4vw, 40px);
+            font-weight: 400;
+
+            color: #1759a4;
+
+            margin-bottom: 12px;
+        }
+
+        .forever-button-section p {
+            font-size: 14px;
+            font-weight: 500;
+
+            line-height: 1.8;
+
+            color: #356b9c;
+
+            margin-bottom: 25px;
+        }
+
+        .forever-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            padding: 16px 32px;
+
+            background: linear-gradient(
+                145deg,
+                #d5ecff,
+                #a6d0f2
+            );
+
+            border: 2px solid #91bde2;
+            border-radius: 40px;
+
+            color: #205f9a;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 7px 20px rgba(57, 105, 150, 0.16);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .forever-button:hover {
+            transform: translateY(-4px) scale(1.03);
+
+            background: linear-gradient(
+                145deg,
+                #e2f3ff,
+                #b4dafa
+            );
+
+            box-shadow:
+                0 12px 28px rgba(57, 105, 150, 0.23);
+        }
+
+        .forever-button:focus-visible {
+            outline: 3px solid #286da8;
+            outline-offset: 5px;
+        }
+
+        /* =========================
+           DECORATIVE HEARTS
+        ========================= */
+
+        .heart-decoration {
+            position: absolute;
+
+            font-size: 28px;
+
+            color: #e5ad28;
+
+            opacity: 0.8;
+
+            pointer-events: none;
+
+            z-index: 0;
+
+            animation: floatHeart 4s ease-in-out infinite;
+        }
+
+        .heart-one {
+            top: 170px;
+            left: 35px;
+        }
+
+        .heart-two {
+            top: 430px;
+            right: 35px;
+
+            animation-delay: 1s;
+        }
+
+        .heart-three {
+            bottom: 300px;
+            left: 7%;
+
+            animation-delay: 1.5s;
+        }
+
+        .heart-four {
+            bottom: 150px;
+            right: 8%;
+
+            animation-delay: 2s;
+        }
+
+        /* =========================
+           POPUP OVERLAY
+        ========================= */
+
+        .forever-overlay {
+            position: fixed;
+            inset: 0;
+
+            z-index: 2000;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(21, 52, 85, 0.30);
+
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .forever-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================
+           POPUP BOX
+        ========================= */
+
+        .forever-popup {
+            width: 100%;
+            max-width: 460px;
+
+            max-height: 85vh;
+            overflow-y: auto;
+
+            padding: 40px 30px 30px;
+
+            position: relative;
+
+            background: #fffaf0;
+
+            border: 2px solid #c2dff5;
+            border-radius: 22px;
+
+            box-shadow:
+                0 15px 50px rgba(15, 49, 83, 0.25);
+
+            text-align: center;
+
+            transform: translateY(20px) scale(0.95);
+
+            transition: transform 0.3s ease;
+        }
+
+        .forever-overlay.show .forever-popup {
+            transform: translateY(0) scale(1);
+        }
+
+        /* =========================
+           POPUP CLOSE BUTTON
+        ========================= */
+
+        .close-forever-popup {
+            position: absolute;
+
+            top: 12px;
+            right: 12px;
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #b6d4ec;
+            border-radius: 50%;
+
+            background: #e6f4ff;
+
+            color: #205f9a;
+
+            font-size: 17px;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .close-forever-popup:hover {
+            background: #cce8fb;
+            transform: rotate(90deg);
+        }
+
+        /* =========================
+           POPUP CONTENT
+        ========================= */
+
+        .forever-popup-icon {
+            font-size: 48px;
+
+            color: #e5ad28;
+
+            margin-bottom: 18px;
+
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        .forever-popup h2 {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 36px;
+            font-weight: 400;
+
+            color: #1759a4;
+
+            margin-bottom: 18px;
+        }
+
+        .forever-popup-message {
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 20px;
+            line-height: 1.9;
+
+            color: #356b9c;
+
+            white-space: pre-line;
+        }
+
+        .forever-popup-heart {
+            margin-top: 22px;
+
+            color: #e5ad28;
+
+            font-size: 28px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .forever-footer {
+            text-align: center;
+
+            margin-top: 35px;
+
+            font-family: 'Patrick Hand', cursive;
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            color: #2b6da8;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .forever-footer span {
+            color: #e5aa19;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+        }
+
+        @keyframes floatHeart {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .forever-container {
+                padding: 30px 20px 40px;
+            }
+
+            .promise-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .promise-card {
+                min-height: 210px;
+            }
+
+            .heart-one {
+                left: 10px;
+            }
+
+            .heart-two {
+                right: 10px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .forever-page {
+                background-attachment: scroll;
+            }
+
+            .forever-container {
+                padding: 25px 18px 35px;
+            }
+
+            .forever-hero {
+                margin-bottom: 30px;
+            }
+
+            .forever-small-heading {
+                font-size: 10px;
+                padding: 8px 15px;
+            }
+
+            .forever-hero h1 {
+                font-size: 47px;
+            }
+
+            .forever-hero p {
+                font-size: 13px;
+                line-height: 1.8;
+            }
+
+            .forever-quote {
+                padding: 30px 22px;
+
+                margin-bottom: 35px;
+            }
+
+            .forever-quote h2 {
+                font-size: 29px;
+            }
+
+            .forever-quote p {
+                font-size: 18px;
+                line-height: 1.8;
+            }
+
+            .promise-section {
+                margin-bottom: 35px;
+            }
+
+            .section-heading {
+                margin-bottom: 22px;
+            }
+
+            .section-heading h2 {
+                font-size: 36px;
+            }
+
+            .section-heading p {
+                font-size: 13px;
+            }
+
+            .promise-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+
+                gap: 18px;
+            }
+
+            .promise-card {
+                min-height: 200px;
+
+                padding: 25px 20px;
+            }
+
+            .promise-card h3 {
+                font-size: 24px;
+            }
+
+            .promise-card p {
+                font-size: 13px;
+            }
+
+            .forever-letter {
+                padding: 30px 22px;
+
+                margin-bottom: 35px;
+            }
+
+            .forever-letter h2 {
+                font-size: 32px;
+            }
+
+            .letter-content {
+                font-size: 18px;
+                line-height: 1.85;
+            }
+
+            .letter-signature {
+                font-size: 22px;
+            }
+
+            .forever-button-section h2 {
+                font-size: 32px;
+            }
+
+            .forever-button-section p {
+                font-size: 13px;
+            }
+
+            .forever-button {
+                padding: 14px 24px;
+                font-size: 13px;
+            }
+
+            .forever-popup {
+                padding: 40px 22px 25px;
+            }
+
+            .forever-popup h2 {
+                font-size: 30px;
+            }
+
+            .forever-popup-message {
+                font-size: 18px;
+            }
+
+            .heart-decoration {
+                font-size: 22px;
+            }
+
+            .heart-one {
+                top: 120px;
+                left: 5px;
+            }
+
+            .heart-two {
+                top: 400px;
+                right: 5px;
+            }
+
+            .forever-footer {
+                font-size: 16px;
+            }
+
+        }
+
+        /* =========================
+           EXTRA SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .forever-container {
+                padding: 22px 13px 30px;
+            }
+
+            .forever-hero h1 {
+                font-size: 40px;
+            }
+
+            .forever-quote {
+                padding: 25px 17px;
+            }
+
+            .forever-quote h2 {
+                font-size: 26px;
+            }
+
+            .forever-quote p {
+                font-size: 17px;
+            }
+
+            .promise-card {
+                padding: 22px 16px;
+            }
+
+            .forever-letter {
+                padding: 25px 17px;
+            }
+
+            .letter-content {
+                font-size: 17px;
+            }
+
+            .forever-popup h2 {
+                font-size: 27px;
+            }
+
+            .forever-popup-message {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="forever-page">
+
+        <!-- =========================
+             SHARED NAVBAR
+        ========================= -->
+
+        <header class="navbar">
+
+            <a href="welcome.html" class="nav-brand">
+
+                <span class="brand-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <span>For My Abir ♡</span>
+
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="welcome.html">Home</a>
+
+                <a href="story.html">Story</a>
+
+                <a href="letter.html">Letter</a>
+
+                <a href="memories.html">Memories</a>
+
+                <a href="surprises.html">Surprises</a>
+
+                <a href="forever.html" class="active">Forever</a>
+
+            </nav>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
+
+        <!-- Navbar blur layer -->
+        <div class="blur-layer" id="blurLayer"></div>
+
+
+        <!-- =========================
+             DECORATIVE HEARTS
+        ========================= -->
+
+        <span class="heart-decoration heart-one">♡</span>
+        <span class="heart-decoration heart-two">♥</span>
+        <span class="heart-decoration heart-three">♡</span>
+        <span class="heart-decoration heart-four">♥</span>
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================= -->
+
+        <main class="forever-container">
+
+            <!-- HERO -->
+
+            <section class="forever-hero">
+
+                <div class="forever-small-heading">
+                    <i class="fa-solid fa-heart"></i>
+                    OUR LITTLE FOREVER
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <h1>
+                    You & Me,
+                    <br>
+                    <span>Forever</span>
+                </h1>
+
+                <span class="hero-heart">♡</span>
+
+                <p>
+                    Out of all the people in this world,
+                    somehow my heart found you.
+                    And if I had to choose all over again,
+                    I would still choose you, Abir.
+                    Every single time. ♡
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 LOVE QUOTE
+            ========================= -->
+
+            <section class="forever-quote">
+
+                <div class="quote-icon">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <h2>
+                    In a world full of temporary things,
+                    you are my favorite forever.
+                </h2>
+
+                <p>
+                    I don't need a perfect love story.
+                    <br>
+                    I just want a real one with you.
+                    <br><br>
+
+                    The kind where we laugh at silly things,
+                    support each other's dreams,
+                    hold hands through difficult days,
+                    and keep finding little reasons
+                    to fall in love all over again.
+                    <br><br>
+
+                    Because with you,
+                    even the simplest moments feel magical.
+                </p>
+
+                <span class="quote-signature">
+                    Yours, today and always <span>♡</span>
+                </span>
+
+            </section>
+
+
+            <!-- =========================
+                 PROMISES SECTION
+            ========================= -->
+
+            <section class="promise-section">
+
+                <div class="section-heading">
+
+                    <h2>My Promises to You</h2>
+
+                    <span>♡</span>
+
+                    <p>
+                        Not just words, but little promises
+                        from the bottom of my heart.
+                    </p>
+
+                </div>
+
+
+                <div class="promise-grid">
+
+                    <!-- PROMISE 1 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <h3>I Promise to Choose You</h3>
+
+                        <p>
+                            On the happiest days and the difficult ones,
+                            I promise to keep choosing us
+                            and never stop appreciating you.
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROMISE 2 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-ear-listen"></i>
+                        </div>
+
+                        <h3>I Promise to Listen</h3>
+
+                        <p>
+                            I want to understand your thoughts,
+                            your dreams, your worries,
+                            and everything you wish to share with me.
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROMISE 3 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-hands-holding-circle"></i>
+                        </div>
+
+                        <h3>I Promise to Support You</h3>
+
+                        <p>
+                            I will celebrate your little wins,
+                            encourage your dreams,
+                            and stand beside you as we grow.
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROMISE 4 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+
+                        <h3>I Promise to Make You Smile</h3>
+
+                        <p>
+                            Through silly jokes, random surprises,
+                            little love notes, and ordinary moments,
+                            I want to bring more happiness into your days.
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROMISE 5 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                        <h3>I Promise to Grow With You</h3>
+
+                        <p>
+                            We may not always have everything figured out,
+                            but I promise to learn, grow,
+                            and build something meaningful with you.
+                        </p>
+
+                    </article>
+
+
+                    <!-- PROMISE 6 -->
+
+                    <article class="promise-card">
+
+                        <div class="promise-icon">
+                            <i class="fa-solid fa-infinity"></i>
+                        </div>
+
+                        <h3>I Promise to Keep Loving You</h3>
+
+                        <p>
+                            In the little everyday moments,
+                            in every new chapter,
+                            I want to keep making beautiful memories with you.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FOREVER LOVE LETTER
+            ========================= -->
+
+            <section class="forever-letter">
+
+                <div class="letter-top-icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+
+                <h2>One Last Thing, My Love...</h2>
+
+                <div class="letter-content">My dearest Abir, ♡
+
+Sometimes I wonder how one person can become
+such a beautiful part of another person's life.
+
+And then I think of you.
+
+The little conversations,
+the unexpected smiles,
+the way ordinary moments become special
+just because you're in them.
+
+You have become someone
+I want to tell my little stories to,
+someone whose happiness matters to me,
+someone I want to see chasing his dreams
+and becoming everything he wishes to be.
+
+I know life won't always be easy.
+We will have busy days,
+tired days, and days when words are difficult.
+
+But I hope we always remember
+why we started,
+how much the little things matter,
+and how beautiful it is to have someone
+to share this journey with.
+
+I don't know every detail of our future.
+
+But I know that I want to keep making memories,
+keep learning about you,
+keep laughing with you,
+and keep choosing the love we share.
+
+Thank you for being you.
+Thank you for being part of my story.
+
+And if there is one thing
+I want you to remember from this little website,
+it is this:
+
+You are loved.
+You are appreciated.
+And you are so, so special to me.
+
+I love you, Abir.
+Today, tomorrow, and all the little days in between. ♡</div>
+
+                <div class="letter-signature">
+                    Forever yours, <span>♡</span>
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 FOREVER BUTTON
+            ========================= -->
+
+            <section class="forever-button-section">
+
+                <h2>So, My Favorite Person...</h2>
+
+                <p>
+                    If you could keep just one little promise with me,
+                    let it be this:
+                    let's keep making beautiful memories together. ♡
+                </p>
+
+                <button class="forever-button" id="foreverButton">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    Forever & Always
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </button>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="forever-footer">
+
+                Made with <span>♥</span> for my Abir
+
+                <br>
+
+                One heart, two people, countless memories. ♡
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         FOREVER POPUP
+    ========================= -->
+
+    <div class="forever-overlay"
+         id="foreverOverlay"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="foreverPopupTitle">
+
+        <div class="forever-popup">
+
+            <button class="close-forever-popup"
+                    id="closeForeverPopup"
+                    aria-label="Close popup">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="forever-popup-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <h2 id="foreverPopupTitle">
+                Forever & Always
+            </h2>
+
+            <p class="forever-popup-message">My Abir, ♡
+
+If I could choose one person
+to share a thousand little moments with,
+I would choose you.
+
+For the laughter,
+for the silly conversations,
+for the dreams,
+and for all the beautiful days still waiting for us.
+
+I don't need a perfect forever.
+
+I just want a real one with you.
+
+I love you, endlessly. ♡</p>
+
+            <div class="forever-popup-heart">
+                ♡
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           NAVBAR FUNCTIONALITY
+        ========================= */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+        const blurLayer = document.getElementById("blurLayer");
+
+        function closeMenu() {
+
+            navLinks.classList.remove("open");
+            blurLayer.classList.remove("show");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+
+            menuToggle.innerHTML =
+                '<i class="fa-solid fa-bars"></i>';
+
+        }
+
+        menuToggle.addEventListener("click", function () {
+
+            const isOpen = navLinks.classList.toggle("open");
+
+            blurLayer.classList.toggle("show", isOpen);
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+
+        });
+
+        blurLayer.addEventListener("click", closeMenu);
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", closeMenu);
+
+        });
+
+
+        /* =========================
+           FOREVER POPUP
+        ========================= */
+
+        const foreverButton =
+            document.getElementById("foreverButton");
+
+        const foreverOverlay =
+            document.getElementById("foreverOverlay");
+
+        const closeForeverPopup =
+            document.getElementById("closeForeverPopup");
+
+
+        /* Open popup */
+
+        foreverButton.addEventListener("click", function () {
+
+            foreverOverlay.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+
+            closeForeverPopup.focus();
+
+        });
+
+
+        /* Close popup */
+
+        function closeForever() {
+
+            foreverOverlay.classList.remove("show");
+
+            document.body.style.overflow = "";
+
+            foreverButton.focus();
+
+        }
+
+
+        closeForeverPopup.addEventListener(
+            "click",
+            closeForever
+        );
+
+
+        /* Close when clicking outside */
+
+        foreverOverlay.addEventListener("click", function (event) {
+
+            if (event.target === foreverOverlay) {
+                closeForever();
+            }
+
+        });
+
+
+        /* Close with Escape */
+
+        document.addEventListener("keydown", function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMenu();
+
+                if (foreverOverlay.classList.contains("show")) {
+                    closeForever();
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

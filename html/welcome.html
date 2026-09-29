@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#120b18">
+    <meta name="description" content="A little world made just for us.">
+
+    <title>Welcome, My Love ❤️</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS: Global Navbar Design -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        /* =========================================
+           WELCOME PAGE BASE
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #120b18;
+            color: white;
+            overflow-x: hidden;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* =========================================
+           WELCOME HERO
+        ========================================= */
+
+        .welcome-page {
+            position: relative;
+
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-image: url("../img/welcome.png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        /* =========================================
+           BACKGROUND BLUR
+           Only when mobile menu is open
+        ========================================= */
+
+        .welcome-page::after {
+            content: "";
+
+            position: absolute;
+            inset: -10px;
+
+            background-image: url("../img/welcome.png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            filter: blur(0);
+            opacity: 0;
+
+            z-index: 0;
+            pointer-events: none;
+
+            transition:
+                filter 0.35s ease,
+                opacity 0.35s ease;
+        }
+
+        .welcome-page.blur-background::after {
+            filter: blur(5px);
+            opacity: 1;
+        }
+
+        /* =========================================
+           DARK OVERLAY
+        ========================================= */
+
+        .welcome-page::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.08) 0%,
+                rgba(0, 0, 0, 0.12) 45%,
+                rgba(0, 0, 0, 0.38) 100%
+            );
+
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* =========================================
+           GLOBAL NAVBAR ON WELCOME PAGE
+           Uses global.css classes and colors
+        ========================================= */
+
+        .welcome-header {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+
+            z-index: 1000;
+
+            background: transparent;
+            border: none;
+            box-shadow: none;
+
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /*
+           Keep global navbar blue design.
+           Do not override .navbar colors, border,
+           brand colors or dropdown styling.
+        */
+
+        .welcome-header .navbar {
+            position: relative;
+            top: auto;
+            left: auto;
+
+            width: 100%;
+            min-height: 48px;
+
+            margin: 0;
+        }
+
+        /* =========================================
+           NAVBAR OVERLAY LAYER
+        ========================================= */
+
+        .welcome-blur-layer {
+            position: fixed;
+            inset: 0;
+
+            z-index: 900;
+
+            background: rgba(18, 11, 24, 0.20);
+
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
+        }
+
+        .welcome-blur-layer.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .welcome-content {
+            position: relative;
+
+            z-index: 3;
+
+            width: min(900px, 90%);
+
+            padding: 110px 20px 80px;
+
+            text-align: center;
+
+            animation: welcomeFade 1.2s ease forwards;
+        }
+
+        /* =========================================
+           EYEBROW
+        ========================================= */
+
+        .welcome-eyebrow {
+            margin: 0 0 18px;
+
+            font-size: clamp(
+                0.65rem,
+                1.5vw,
+                0.85rem
+            );
+
+            letter-spacing: 5px;
+            text-transform: uppercase;
+
+            opacity: 0.8;
+        }
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .welcome-title {
+            margin: 0;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(
+                3.5rem,
+                10vw,
+                8rem
+            );
+
+            font-weight: 400;
+
+            line-height: 0.95;
+            letter-spacing: -2px;
+
+            text-shadow:
+                0 5px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        .welcome-title span {
+            display: block;
+        }
+
+        .welcome-title .second-line {
+            margin-top: 10px;
+        }
+
+        /* =========================================
+           DESCRIPTION
+        ========================================= */
+
+        .welcome-description {
+            width: min(580px, 100%);
+
+            margin: 30px auto 0;
+
+            font-size: clamp(
+                0.95rem,
+                2vw,
+                1.15rem
+            );
+
+            line-height: 1.8;
+            opacity: 0.88;
+
+            text-shadow:
+                0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-description strong {
+            font-weight: 600;
+        }
+
+        /* =========================================
+           BEGIN OUR STORY BUTTON
+        ========================================= */
+
+        .welcome-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            min-width: 190px;
+
+            margin-top: 34px;
+            padding: 14px 28px;
+
+            color: white;
+            text-decoration: none;
+
+            font-size: 0.95rem;
+            letter-spacing: 0.4px;
+
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.15);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .welcome-button:hover {
+            transform: translateY(-3px);
+
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .welcome-arrow {
+            font-size: 1.1rem;
+
+            transition: transform 0.3s ease;
+        }
+
+        .welcome-button:hover .welcome-arrow {
+            transform: translateX(5px);
+        }
+
+        /* =========================================
+           SCROLL INDICATOR
+        ========================================= */
+
+        .welcome-scroll {
+            position: absolute;
+
+            z-index: 4;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 8px;
+
+            color: white;
+
+            font-size: 0.62rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            opacity: 0.65;
+
+            animation: scrollMove 2s ease-in-out infinite;
+        }
+
+        .welcome-scroll-line {
+            width: 1px;
+            height: 28px;
+
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* =========================================
+           ANIMATIONS
+        ========================================= */
+
+        @keyframes welcomeFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollMove {
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 7px);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.18);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.12);
+            }
+
+            56% {
+                transform: scale(1);
+            }
+        }
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 800px) {
+            .welcome-header {
+                padding: 8px 12px;
+            }
+
+            .welcome-content {
+                width: 94%;
+            }
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+            .welcome-header {
+                padding: 8px 10px;
+            }
+
+            /*
+               The navbar dropdown is controlled
+               by global.css. These adjustments
+               keep it above the welcome content.
+            */
+
+            .welcome-header .navbar {
+                min-height: 55px;
+            }
+
+            .welcome-content {
+                width: 92%;
+
+                padding: 100px 10px 70px;
+            }
+
+            .welcome-title {
+                font-size: clamp(
+                    3rem,
+                    16vw,
+                    5rem
+                );
+            }
+
+            .welcome-description {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-top: 24px;
+            }
+
+            .welcome-button {
+                margin-top: 27px;
+            }
+
+            .welcome-scroll {
+                bottom: 18px;
+            }
+        }
+
+        /* =========================================
+           SMALL HEIGHT DEVICES
+        ========================================= */
+
+        @media (max-height: 650px) {
+            .welcome-content {
+                padding-top: 85px;
+                padding-bottom: 55px;
+            }
+
+            .welcome-description {
+                margin-top: 18px;
+            }
+
+            .welcome-button {
+                margin-top: 20px;
+            }
+
+            .welcome-scroll {
+                display: none;
+            }
+        }
+
+        /* =========================================
+           ACCESSIBILITY
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .welcome-content,
+            .welcome-scroll,
+            .welcome-logo-heart {
+                animation: none;
+            }
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         WELCOME HERO
+    ========================================= -->
+
+    <main class="welcome-page" id="welcomePage">
+
+        <!-- =====================================
+             GLOBAL NAVBAR
+        ====================================== -->
+
+        <header class="welcome-header">
+
+            <div class="navbar">
+
+                <!-- Brand -->
+                <a href="welcome.html" class="nav-brand">
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </span>
+
+                    <span>For My Abir ♡</span>
+                </a>
+
+                <!-- Hamburger -->
+                <button
+                    class="menu-toggle"
+                    id="welcomeMenu"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="welcomeNav"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Navigation Links -->
+                <nav class="nav-links" id="welcomeNav">
+
+                    <a href="welcome.html" class="active">
+                        Home
+                    </a>
+
+                    <a href="story.html">
+                        Our Story
+                    </a>
+
+                    <a href="memories.html">
+                        Memories
+                    </a>
+
+                    <a href="letter.html">
+                        Love Letter
+                    </a>
+
+                    <a href="surprises.html">
+                        Surprises
+                    </a>
+
+                    <a href="forever.html">
+                        Forever
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+        <!-- Blur Overlay -->
+        <div
+            class="welcome-blur-layer"
+            id="blurLayer"
+            aria-hidden="true"
+        ></div>
+
+        <!-- =====================================
+             HERO CONTENT
+        ====================================== -->
+
+        <section class="welcome-content">
+
+            <p class="welcome-eyebrow">
+                A little something for you
+            </p>
+
+            <h1 class="welcome-title">
+                <span>Welcome</span>
+                <span class="second-line">My Love</span>
+            </h1>
+
+            <p class="welcome-description">
+                This isn't just a website.
+                It's a little collection of our moments,
+                our memories, our story,
+                and everything that makes us...
+
+                <br>
+
+                <strong>us.</strong>
+            </p>
+
+            <a href="story.html" class="welcome-button">
+                <span>Begin Our Story</span>
+
+                <span class="welcome-arrow">
+                    →
+                </span>
+            </a>
+
+        </section>
+
+        <!-- =====================================
+             SCROLL INDICATOR
+        ====================================== -->
+
+        <div class="welcome-scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <span class="welcome-scroll-line"></span>
+        </div>
+
+    </main>
+
+    <!-- =========================================
+         NAVBAR JAVASCRIPT
+    ========================================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuButton = document.getElementById("welcomeMenu");
+            const navigation = document.getElementById("welcomeNav");
+            const welcomePage = document.getElementById("welcomePage");
+            const blurLayer = document.getElementById("blurLayer");
+
+            if (!menuButton || !navigation || !welcomePage || !blurLayer) {
+                return;
+            }
+
+            /* =====================================
+               OPEN / CLOSE MENU
+            ====================================== */
+
+            function openMenu() {
+                navigation.classList.add("open");
+                blurLayer.classList.add("show");
+                welcomePage.classList.add("blur-background");
+
+                menuButton.setAttribute("aria-expanded", "true");
+                menuButton.setAttribute("aria-label", "Close navigation");
+
+                menuButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+                blurLayer.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeMenu() {
+                navigation.classList.remove("open");
+                blurLayer.classList.remove("show");
+                welcomePage.classList.remove("blur-background");
+
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Open navigation");
+
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+                blurLayer.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+
+            function toggleMenu() {
+                const isOpen = navigation.classList.contains("open");
+
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+
+            menuButton.addEventListener("click", toggleMenu);
+
+            /* =====================================
+               CLOSE ON OVERLAY CLICK
+            ====================================== */
+
+            blurLayer.addEventListener("click", closeMenu);
+
+            /* =====================================
+               CLOSE WHEN NAV LINK IS CLICKED
+            ====================================== */
+
+            navigation.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", closeMenu);
+            });
+
+            /* =====================================
+               CLOSE WITH ESCAPE KEY
+            ====================================== */
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            /* =====================================
+               CLOSE MENU WHEN RESIZING TO DESKTOP
+            ====================================== */
+
+            window.addEventListener("resize", function () {
+                if (window.innerWidth > 600) {
+                    closeMenu();
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>

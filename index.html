@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#120b18">
+    <meta name="description" content="A little world made just for Abir.">
+
+    <meta http-equiv="refresh" content="0; url=html/welcome.html">
+
+    <title>For My Abir ♡</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            font-family: 'Georgia', serif;
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(150, 70, 130, 0.25),
+                    transparent 45%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(100, 60, 160, 0.25),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #120b18,
+                    #211127,
+                    #100b18
+                );
+        }
+
+        /* Background glow */
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            z-index: -1;
+            animation: float 8s ease-in-out infinite alternate;
+        }
+
+        body::before {
+            background: #c45a9a;
+            top: -100px;
+            left: -100px;
+        }
+
+        body::after {
+            background: #7954c9;
+            bottom: -100px;
+            right: -100px;
+            animation-delay: 2s;
+        }
+
+        /* Main glass card */
+
+        .welcome-card {
+            width: min(90%, 420px);
+            padding: 45px 30px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 28px;
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+            animation: appear 1.2s ease forwards;
+        }
+
+        .heart {
+            font-size: 45px;
+            color: #ff9bcf;
+            margin-bottom: 20px;
+
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+            text-shadow: 0 0 25px rgba(255, 120, 190, 0.6);
+        }
+
+        h1 {
+            font-size: clamp(25px, 6vw, 35px);
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #ffe4f3;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.72);
+            margin-bottom: 28px;
+        }
+
+        /* Glass button */
+
+        .glass-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 13px 25px;
+            border-radius: 50px;
+
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            transition: all 0.3s ease;
+        }
+
+        .glass-button:hover {
+            background: rgba(255, 150, 210, 0.18);
+            border-color: rgba(255, 180, 225, 0.7);
+
+            box-shadow: 0 0 30px rgba(255, 120, 190, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .arrow {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-button:hover .arrow {
+            transform: translateX(5px);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+        }
+
+        /* Animations */
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(50px, 40px);
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+            .welcome-card {
+                padding: 35px 22px;
+            }
+
+            .heart {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="welcome-card">
+
+        <div class="heart">♡</div>
+
+        <h1>For My Abir</h1>
+
+        <p>
+            A little world made just for you...<br>
+            Filled with love, memories, and forever.
+        </p>
+
+        <a href="html/welcome.html" class="glass-button">
+            <span>Enter Our Little World</span>
+            <span class="arrow">→</span>
+        </a>
+
+        <div class="footer">
+            MADE WITH LOVE ♡
+        </div>
+
+    </main>
+
+</body>
+</html>

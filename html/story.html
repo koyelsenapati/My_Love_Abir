@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d7efff">
+    <meta name="description" content="Our beautiful love story, made just for Abir.">
+
+    <title>Our Love Story | For My Abir ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        /* =========================================
+           STORY PAGE RESET
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            color: #18549a;
+            background: #fffaf0;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================
+           STORY BACKGROUND
+        ========================================= */
+
+        .story-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            background-color: #fffaf0;
+            background-image: url("../img/story.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .story-page::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+
+            background: rgba(255, 250, 240, 0.76);
+            pointer-events: none;
+        }
+
+        /* =========================================
+           STORY CONTENT
+        ========================================= */
+
+        .story-container {
+            width: min(100%, 1050px);
+            margin: 0 auto;
+            padding: 10px 30px 50px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Heading */
+
+        .story-heading {
+            text-align: center;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 2;
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .story-heading h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: clamp(35px, 5vw, 48px);
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            color: #1759a4;
+        }
+
+        .heading-heart {
+            display: block;
+            margin-top: -2px;
+            color: #2677c0;
+            font-size: 18px;
+        }
+
+        .story-heading p {
+            margin-top: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #285e91;
+        }
+
+        /* =========================================
+           TIMELINE
+        ========================================= */
+
+        .timeline {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Vertical center line */
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 20px;
+            left: 50%;
+
+            width: 2px;
+            transform: translateX(-50%);
+
+            background: #79add5;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            width: 100%;
+            min-height: 145px;
+
+            display: grid;
+            grid-template-columns: 1fr 70px 1fr;
+            align-items: center;
+
+            position: relative;
+
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .timeline-item:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+
+        .timeline-item:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .timeline-item:nth-child(3) {
+            animation-delay: 0.45s;
+        }
+
+        .timeline-item:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        /* Timeline icons */
+
+        .timeline-icon {
+            width: 47px;
+            height: 47px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            z-index: 5;
+
+            background: linear-gradient(145deg, #4a91ce, #1760a8);
+            color: #ffffff;
+
+            border: 3px solid #d9eaff;
+            border-radius: 50%;
+
+            box-shadow: 0 3px 7px rgba(22, 80, 140, 0.22);
+
+            font-size: 17px;
+        }
+
+        /* =========================================
+           POLAROID PHOTOS
+        ========================================= */
+
+        .timeline-photo {
+            width: 155px;
+            padding: 7px 7px 9px;
+
+            background: #fffdf8;
+            border: 1px solid #e0ddd5;
+
+            box-shadow: 0 4px 9px rgba(75, 91, 110, 0.18);
+
+            text-align: center;
+
+            position: relative;
+            z-index: 2;
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .timeline-photo:hover {
+            transform: rotate(0deg) scale(1.06);
+            box-shadow: 0 8px 18px rgba(50, 92, 135, 0.23);
+            z-index: 10;
+        }
+
+        .timeline-photo img {
+            display: block;
+            width: 100%;
+            height: 95px;
+
+            object-fit: cover;
+            background: #d8ecf9;
+        }
+
+        .timeline-photo p {
+            margin-top: 7px;
+
+            font-family: 'Patrick Hand', cursive;
+            font-size: 13px;
+            color: #1d5a9a;
+        }
+
+        .photo-left {
+            grid-column: 1;
+            justify-self: start;
+
+            transform: rotate(-5deg);
+            margin-left: 12px;
+        }
+
+        .photo-right {
+            grid-column: 3;
+            justify-self: end;
+
+            transform: rotate(5deg);
+            margin-right: 12px;
+        }
+
+        /* =========================================
+           STORY TEXT
+        ========================================= */
+
+        .timeline-content {
+            width: 100%;
+            max-width: 225px;
+            padding: 12px 5px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-content h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #14559b;
+            margin-bottom: 3px;
+        }
+
+        .timeline-content .date {
+            display: block;
+
+            font-size: 13px;
+            font-weight: 600;
+            color: #4c83b4;
+
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #245e95;
+        }
+
+        /* =========================================
+           TIMELINE ROW LAYOUT
+        ========================================= */
+
+        /* Row 1: Photo left, text right */
+
+        .item-one .timeline-photo {
+            grid-column: 1;
+            justify-self: start;
+        }
+
+        .item-one .timeline-content {
+            grid-column: 3;
+            justify-self: start;
+            text-align: left;
+            margin-left: 12px;
+        }
+
+        /* Row 2: Text left, photo right */
+
+        .item-two .timeline-content {
+            grid-column: 1;
+            justify-self: end;
+            text-align: right;
+            margin-right: 12px;
+        }
+
+        .item-two .timeline-photo {
+            grid-column: 3;
+            justify-self: end;
+        }
+
+        /* Row 3: Photo left, text right */
+
+        .item-three .timeline-photo {
+            grid-column: 1;
+            justify-self: start;
+        }
+
+        .item-three .timeline-content {
+            grid-column: 3;
+            justify-self: start;
+            text-align: left;
+            margin-left: 12px;
+        }
+
+        /* Row 4: Text left, photo right */
+
+        .item-four .timeline-content {
+            grid-column: 1;
+            justify-self: end;
+            text-align: right;
+            margin-right: 12px;
+        }
+
+        .item-four .timeline-photo {
+            grid-column: 3;
+            justify-self: end;
+        }
+
+        /* =========================================
+           DECORATIONS
+        ========================================= */
+
+        .sunflower {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.95;
+        }
+
+        .sunflower-top {
+            width: 105px;
+            top: 5px;
+            right: -5px;
+            transform: rotate(10deg);
+        }
+
+        .sunflower-bottom-left {
+            width: 110px;
+            left: -10px;
+            bottom: -15px;
+            transform: rotate(-20deg);
+        }
+
+        .sunflower-bottom-right {
+            width: 100px;
+            right: -5px;
+            bottom: 10px;
+            transform: rotate(15deg);
+        }
+
+        .flower-decoration {
+            position: absolute;
+            color: #e8b72d;
+            font-size: 25px;
+
+            opacity: 0.75;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .flower-one {
+            top: 220px;
+            left: 20px;
+        }
+
+        .flower-two {
+            top: 380px;
+            right: 30px;
+        }
+
+        .flower-three {
+            bottom: 140px;
+            left: 35%;
+        }
+
+        /* =========================================
+           NEXT PAGE BUTTON
+           Uses global.css glass button design
+        ========================================= */
+
+        .story-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            margin: 35px auto 15px;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .story-next .welcome-button {
+            margin-top: 0;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .story-footer {
+            position: relative;
+            z-index: 2;
+
+            margin: 25px auto 0;
+            text-align: center;
+
+            font-family: 'Patrick Hand', cursive;
+            font-size: 17px;
+            color: #2b6da8;
+        }
+
+        .story-footer span {
+            color: #e5aa19;
+        }
+
+        /* =========================================
+           ANIMATIONS
+        ========================================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           TABLET RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .story-container {
+                padding: 15px 20px 40px;
+            }
+
+            .timeline-photo {
+                width: 135px;
+            }
+
+            .timeline-photo img {
+                height: 85px;
+            }
+
+            .timeline-content {
+                max-width: 190px;
+            }
+
+            .timeline-content h2 {
+                font-size: 15px;
+            }
+
+            .timeline-content p {
+                font-size: 12px;
+            }
+
+            .sunflower-top {
+                width: 85px;
+            }
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .story-container {
+                padding: 18px 12px 35px;
+            }
+
+            .story-heading {
+                margin-bottom: 30px;
+            }
+
+            .story-heading h1 {
+                font-size: 37px;
+            }
+
+            .story-heading p {
+                font-size: 13px;
+            }
+
+            .timeline {
+                max-width: 440px;
+            }
+
+            .timeline::before {
+                left: 50%;
+            }
+
+            .timeline-item {
+                min-height: 155px;
+                grid-template-columns: 1fr 48px 1fr;
+            }
+
+            .timeline-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+
+            .timeline-photo {
+                width: 115px;
+                padding: 5px 5px 7px;
+            }
+
+            .timeline-photo img {
+                height: 75px;
+            }
+
+            .timeline-photo p {
+                font-size: 11px;
+            }
+
+            .photo-left {
+                margin-left: 0;
+            }
+
+            .photo-right {
+                margin-right: 0;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+                padding: 8px 3px;
+            }
+
+            .timeline-content h2 {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+
+            .timeline-content .date {
+                font-size: 11px;
+                margin-bottom: 5px;
+            }
+
+            .timeline-content p {
+                font-size: 11px;
+                line-height: 1.6;
+            }
+
+            .item-one .timeline-content,
+            .item-three .timeline-content {
+                margin-left: 3px;
+            }
+
+            .item-two .timeline-content,
+            .item-four .timeline-content {
+                margin-right: 3px;
+            }
+
+            .sunflower-top {
+                width: 65px;
+                top: 0;
+                right: -5px;
+            }
+
+            .sunflower-bottom-left {
+                width: 70px;
+            }
+
+            .sunflower-bottom-right {
+                width: 65px;
+            }
+
+            .flower-one,
+            .flower-two {
+                font-size: 18px;
+            }
+
+            .story-footer {
+                font-size: 15px;
+            }
+
+            .story-next {
+                margin-top: 30px;
+            }
+        }
+
+        /* =========================================
+           EXTRA SMALL SCREENS
+        ========================================= */
+
+        @media (max-width: 380px) {
+
+            .timeline-item {
+                grid-template-columns: 1fr 40px 1fr;
+                min-height: 145px;
+            }
+
+            .timeline-photo {
+                width: 100px;
+            }
+
+            .timeline-photo img {
+                height: 65px;
+            }
+
+            .timeline-content h2 {
+                font-size: 12px;
+            }
+
+            .timeline-content p {
+                font-size: 10px;
+            }
+
+            .timeline-content .date {
+                font-size: 10px;
+            }
+
+            .timeline-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 12px;
+            }
+        }
+
+        /* =========================================
+           ACCESSIBILITY
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .story-heading,
+            .timeline-item {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         STORY PAGE
+    ========================================= -->
+
+    <div class="story-page" id="storyPage">
+
+        <!-- NAVBAR -->
+
+        <header class="navbar">
+
+            <a href="welcome.html" class="nav-brand">
+                <span class="brand-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <span>For My Abir ♡</span>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="welcome.html">Home</a>
+
+                <a href="story.html" class="active">Story</a>
+
+                <a href="letter.html">Letter</a>
+
+                <a href="memories.html">Memories</a>
+
+                <a href="surprises.html">Surprises</a>
+
+                <a href="forever.html">Forever</a>
+
+            </nav>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
+
+        <!-- NAVBAR BLUR OVERLAY -->
+
+        <div
+            class="blur-layer"
+            id="blurLayer"
+            aria-hidden="true">
+        </div>
+
+        <!-- =========================================
+             MAIN STORY CONTENT
+        ========================================= -->
+
+        <main class="story-container">
+
+            <!-- Decorations -->
+
+            <span class="flower-decoration flower-one">✿</span>
+            <span class="flower-decoration flower-two">✿</span>
+            <span class="flower-decoration flower-three">✿</span>
+
+            <!-- Heading -->
+
+            <section class="story-heading">
+
+                <h1>Our Love Story</h1>
+
+                <span class="heading-heart">♡</span>
+
+                <p>
+                    Two hearts, one beautiful journey...
+                </p>
+
+            </section>
+
+            <!-- =====================================
+                 TIMELINE
+            ====================================== -->
+
+            <section class="timeline">
+
+                <!-- 1. OUR FIRST CHAT -->
+
+                <article class="timeline-item item-one">
+
+                    <div class="timeline-photo photo-left">
+
+                        <img
+                            src="../img/first-chat.jpg"
+                            alt="Our first chat memory"
+                            loading="lazy">
+
+                        <p>The beginning...</p>
+
+                    </div>
+
+                    <div class="timeline-icon">
+                        <i class="fa-regular fa-message"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h2>Our First Chat</h2>
+
+                        <span class="date">
+                            12 August 2026, Wednesday at 11:12 AM
+                        </span>
+
+                        <p>
+                            It started with a simple
+                            message... and never stopped.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- 2. OUR FIRST MEET -->
+
+                <article class="timeline-item item-two">
+
+                    <div class="timeline-content">
+
+                        <h2>Our First Meet</h2>
+
+                        <span class="date">
+                            23 August 2026
+                        </span>
+
+                        <p>
+                            The day I saw you in real life
+                            and my heart felt at home.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="timeline-photo photo-right">
+
+                        <img
+                            src="../img/firstdate.jpeg"
+                            alt="Our first meeting"
+                            loading="lazy">
+
+                        <p>Finally... ♡</p>
+
+                    </div>
+
+                </article>
+
+                <!-- 3. OFFICIALLY US -->
+
+                <article class="timeline-item item-three">
+
+                    <div class="timeline-photo photo-left">
+
+                        <img
+                            src="../img/first-date.jpeg"
+                            alt="Our special moment"
+                            loading="lazy">
+
+                        <p>You & Me ♡</p>
+
+                    </div>
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-people-arrows"></i>
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h2>Officially Us</h2>
+
+                        <span class="date">
+                            25 August 2026
+                        </span>
+
+                        <p>
+                            No more "maybe".
+                            Just us. ♡
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- 4. MANY MORE TO GO -->
+
+                <article class="timeline-item item-four">
+
+                    <div class="timeline-content">
+
+                        <h2>Many More to Go</h2>
+
+                        <span class="date">
+                            Forever
+                        </span>
+
+                        <p>
+                            More trips, more sunsets,
+                            more memories... together.
+                        </p>
+
+                    </div>
+
+                    <div class="timeline-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="timeline-photo photo-right">
+
+                        <img
+                            src="../img/img1.jpeg"
+                            alt="Our future memories"
+                            loading="lazy">
+
+                        <p>Forever ♡</p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- =====================================
+                 NEXT PAGE BUTTON
+            ====================================== -->
+
+            <div class="story-next">
+
+                <a style="color: #14559b;" href="memories.html" class="welcome-button">
+
+                    <span>Our Memories</span>
+
+                    <span class="welcome-arrow">→</span>
+
+                </a>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <footer class="story-footer">
+
+                Made with <span>♥</span> for my Abir
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- =========================================
+         NAVBAR JAVASCRIPT
+    ========================================= -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const menuToggle = document.getElementById("menuToggle");
+            const navLinks = document.getElementById("navLinks");
+            const blurLayer = document.getElementById("blurLayer");
+
+            if (!menuToggle || !navLinks || !blurLayer) {
+                return;
+            }
+
+            /* =====================================
+               OPEN MENU
+            ====================================== */
+
+            function openMenu() {
+
+                navLinks.classList.add("open");
+                blurLayer.classList.add("show");
+
+                menuToggle.setAttribute("aria-expanded", "true");
+                menuToggle.setAttribute("aria-label", "Close navigation menu");
+
+                blurLayer.setAttribute("aria-hidden", "false");
+
+                menuToggle.innerHTML =
+                    '<i class="fa-solid fa-xmark"></i>';
+
+                document.body.style.overflow = "hidden";
+            }
+
+            /* =====================================
+               CLOSE MENU
+            ====================================== */
+
+            function closeMenu() {
+
+                navLinks.classList.remove("open");
+                blurLayer.classList.remove("show");
+
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+                blurLayer.setAttribute("aria-hidden", "true");
+
+                menuToggle.innerHTML =
+                    '<i class="fa-solid fa-bars"></i>';
+
+                document.body.style.overflow = "";
+            }
+
+            /* =====================================
+               TOGGLE MENU
+            ====================================== */
+
+            menuToggle.addEventListener("click", function () {
+
+                const isOpen = navLinks.classList.contains("open");
+
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+
+            });
+
+            /* =====================================
+               CLOSE ON OVERLAY CLICK
+            ====================================== */
+
+            blurLayer.addEventListener("click", closeMenu);
+
+            /* =====================================
+               CLOSE WHEN NAV LINK IS CLICKED
+            ====================================== */
+
+            navLinks.querySelectorAll("a").forEach(function (link) {
+
+                link.addEventListener("click", closeMenu);
+
+            });
+
+            /* =====================================
+               CLOSE WITH ESCAPE KEY
+            ====================================== */
+
+            document.addEventListener("keydown", function (event) {
+
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+
+            });
+
+            /* =====================================
+               CLOSE WHEN RESIZING TO DESKTOP
+            ====================================== */
+
+            window.addEventListener("resize", function () {
+
+                if (window.innerWidth > 600) {
+                    closeMenu();
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

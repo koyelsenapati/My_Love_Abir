@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#fff8f5">
+    <meta name="description" content="Our little collection of memories, made with love.">
+
+    <title>Our Memories ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        /* =========================================
+           BASE
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            min-height: 100vh;
+            color: #593b48;
+            overflow-x: hidden;
+            background: #fff8f5;
+        }
+
+        /* =========================================
+           BACKGROUND
+        ========================================= */
+
+        .memories-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+
+            padding: 55px 20px 80px;
+
+            background-image: url("../img/memory.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .memories-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+
+            background: rgba(255, 247, 245, 0.60);
+
+            pointer-events: none;
+        }
+
+        /* =========================================
+           MAIN CONTAINER
+        ========================================= */
+
+        .memories-container {
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           HEADING
+        ========================================= */
+
+        .memories-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .memories-heading .small-title {
+            font-family: 'Patrick Hand', cursive;
+            font-size: 22px;
+            color: #bd7a91;
+            margin-bottom: 10px;
+        }
+
+        .memories-heading h1 {
+            font-family: 'Patrick Hand', cursive;
+            font-size: clamp(42px, 7vw, 70px);
+            color: #a64f72;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .memories-heading p {
+            font-size: 15px;
+            line-height: 1.8;
+            max-width: 580px;
+            margin: 0 auto;
+            color: #795967;
+        }
+
+        .heading-heart {
+            color: #d77b9b;
+            font-size: 20px;
+            margin: 0 8px;
+        }
+
+        /* =========================================
+           MEMORY GALLERY
+        ========================================= */
+
+        .memory-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        /* =========================================
+           MEMORY CARD
+        ========================================= */
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.88);
+
+            border: 1px solid rgba(224, 166, 184, 0.4);
+            border-radius: 15px;
+
+            padding: 14px 14px 20px;
+
+            box-shadow: 0 10px 30px rgba(128, 71, 91, 0.12);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            overflow: hidden;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-7px) rotate(-1deg);
+
+            box-shadow: 0 18px 38px rgba(128, 71, 91, 0.20);
+        }
+
+        /* =========================================
+           MEMORY PHOTO
+        ========================================= */
+
+        .memory-photo {
+            width: 100%;
+            aspect-ratio: 4 / 4.3;
+
+            position: relative;
+            overflow: hidden;
+
+            border-radius: 9px;
+
+            background: rgba(248, 226, 233, 0.45);
+        }
+
+        .memory-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            display: block;
+
+            transition: transform 0.4s ease;
+        }
+
+        .memory-photo:hover img {
+            transform: scale(1.04);
+        }
+
+        /* =========================================
+           MEMORY CAPTION
+        ========================================= */
+
+        .memory-caption {
+            text-align: center;
+            padding: 17px 5px 0;
+        }
+
+        .memory-caption h3 {
+            font-family: 'Patrick Hand', cursive;
+            color: #a64f72;
+            font-size: 25px;
+            margin-bottom: 7px;
+        }
+
+        .memory-caption p {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #876775;
+        }
+
+        .caption-heart {
+            display: block;
+            margin-top: 10px;
+            color: #d88ca6;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           BOTTOM MESSAGE
+        ========================================= */
+
+        .memories-footer {
+            text-align: center;
+
+            margin-top: 65px;
+            padding: 35px 20px;
+
+            background: rgba(255, 255, 255, 0.70);
+
+            border: 1px solid rgba(224, 166, 184, 0.35);
+            border-radius: 20px;
+
+            box-shadow: 0 10px 30px rgba(128, 71, 91, 0.08);
+        }
+
+        .memories-footer > i {
+            color: #d77b9b;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .memories-footer h2 {
+            font-family: 'Patrick Hand', cursive;
+            color: #a64f72;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .memories-footer p {
+            color: #795967;
+            font-size: 14px;
+            line-height: 1.8;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .footer-signature {
+            font-family: 'Patrick Hand', cursive;
+            color: #b96e89;
+            font-size: 23px;
+            margin-top: 20px;
+        }
+
+        /* =========================================
+           NEXT PAGE BUTTON
+        ========================================= */
+
+        .memories-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 40px;
+        }
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (max-width: 900px) {
+            .memory-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px;
+            }
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 550px) {
+            .memories-page {
+                padding: 40px 15px 55px;
+                background-attachment: scroll;
+            }
+
+            .memories-heading {
+                margin-bottom: 30px;
+            }
+
+            .memories-heading .small-title {
+                font-size: 19px;
+            }
+
+            .memories-heading p {
+                font-size: 13px;
+            }
+
+            .memory-gallery {
+                grid-template-columns: 1fr;
+                gap: 25px;
+
+                max-width: 370px;
+                margin: 0 auto;
+            }
+
+            .memory-card {
+                padding: 12px 12px 18px;
+            }
+
+            .memory-photo {
+                aspect-ratio: 4 / 3.8;
+            }
+
+            .memories-footer {
+                margin-top: 45px;
+                padding: 28px 18px;
+            }
+
+            .memories-footer h2 {
+                font-size: 27px;
+            }
+
+            .footer-signature {
+                font-size: 21px;
+            }
+
+            .memories-next {
+                margin-top: 30px;
+            }
+        }
+
+        /* =========================================
+           ACCESSIBILITY
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .memory-card,
+            .memory-photo img {
+                transition: none;
+            }
+
+            .memory-card:hover {
+                transform: none;
+            }
+
+            .memory-photo:hover img {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         GLOBAL NAVBAR
+    ========================================= -->
+
+    <header class="navbar">
+
+        <a href="welcome.html" class="nav-brand">
+            <span class="brand-icon">
+                <i class="fa-solid fa-heart"></i>
+            </span>
+
+            <span>For My Abir ♡</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="welcome.html">Home</a>
+
+            <a href="story.html">Story</a>
+
+            <a href="letter.html">Letter</a>
+
+            <a href="memories.html" class="active">Memories</a>
+
+            <a href="surprises.html">Surprises</a>
+
+            <a href="forever.html">Forever</a>
+
+        </nav>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </header>
+
+    <!-- Navbar Blur Overlay -->
+    <div class="blur-layer" id="blurLayer"></div>
+
+
+    <!-- =========================================
+         MEMORIES PAGE
+    ========================================= -->
+
+    <main class="memories-page">
+
+        <div class="memories-container">
+
+            <!-- PAGE HEADING -->
+
+            <section class="memories-heading">
+
+                <div class="small-title">
+                    A little piece of us
+                    <i class="fa-solid fa-heart heading-heart"></i>
+                </div>
+
+                <h1>Our Memories</h1>
+
+                <p>
+                    Every little moment with you becomes a memory
+                    I want to keep forever. Here are some of our
+                    beautiful moments together. ♡
+                </p>
+
+            </section>
+
+
+            <!-- =====================================
+                 PHOTO GALLERY
+                 Change image paths in src=""
+            ====================================== -->
+
+            <section class="memory-gallery">
+
+                <!-- MEMORY 1 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/first-date.jpeg"
+                            alt="Our First Picture"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>Our First Picture</h3>
+
+                        <p>
+                            The beginning of so many beautiful memories.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 2 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/special-day.jpeg"
+                            alt="Our Special Day"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>Our Special Day</h3>
+
+                        <p>
+                            A day I wish I could live over and over again.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 3 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/favorite-moment.jpeg"
+                            alt="My Favorite Moment"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>My Favorite Moment</h3>
+
+                        <p>
+                            One of those moments when everything felt perfect.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 4 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/adventure.jpeg"
+                            alt="Our Little Adventures"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>Our Little Adventures</h3>
+
+                        <p>
+                            Every adventure is special when I am with you.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 5 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/just-us.jpeg"
+                            alt="Just You and Me"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>Just You &amp; Me</h3>
+
+                        <p>
+                            My favorite place will always be beside you.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEMORY 6 -->
+
+                <div class="memory-card">
+
+                    <div class="memory-photo">
+
+                        <img
+                            src="../img/forever.jpeg"
+                            alt="Our Forever Memory"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="memory-caption">
+
+                        <h3>Our Forever Memory</h3>
+
+                        <p>
+                            And a thousand more memories still waiting for us.
+                        </p>
+
+                        <span class="caption-heart">♡</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =====================================
+                 BOTTOM LOVE MESSAGE
+            ====================================== -->
+
+            <section class="memories-footer">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h2>Our Story Isn't Over Yet...</h2>
+
+                <p>
+                    These are just a few moments from our journey.
+                    There are so many places to visit, so many pictures
+                    to take, and so many memories left to make.
+                    I want all of them to be with you, Abir.
+                </p>
+
+                <div class="footer-signature">
+                    To many more memories together ♡
+                </div>
+
+            </section>
+
+
+            <!-- NEXT PAGE BUTTON -->
+
+            <div class="memories-next">
+
+                <a style="color: #593b48;" href="letter.html" class="welcome-button">
+                    <span>Love Letter</span>
+                    <span class="welcome-arrow">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         GLOBAL NAVBAR JAVASCRIPT
+    ========================================= -->
+
+    <script src="../global.js"></script>
+
+</body>
+
+</html>

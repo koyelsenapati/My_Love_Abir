@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d7efff">
+    <meta name="description" content="A little love letter written just for Abir.">
+
+    <title>My Love Letter | For My Abir ♡</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Shared Navbar CSS -->
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            color: #18549a;
+            overflow-x: hidden;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================
+           PAGE BACKGROUND
+        ========================= */
+
+        .letter-page {
+            min-height: 100vh;
+            position: relative;
+            isolation: isolate;
+
+            background-image: url("../img/letter.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            padding-bottom: 35px;
+        }
+
+        .letter-page::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+
+            background: rgba(255, 248, 235, 0.15);
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           LETTER MAIN CONTAINER
+        ========================= */
+
+        .letter-container {
+            width: 100%;
+            max-width: 1000px;
+
+            margin: 0 auto;
+            padding: 50px 25px 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+        }
+
+        /* =========================
+           PAPER LETTER
+        ========================= */
+
+        .letter-paper {
+            width: 100%;
+            max-width: 570px;
+
+            min-height: 530px;
+
+            padding: 45px 55px 35px;
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 253, 246, 0.98),
+                    rgba(248, 238, 218, 0.98)
+                );
+
+            border: 1px solid #e6d7bd;
+
+            box-shadow:
+                0 12px 35px rgba(83, 64, 39, 0.2),
+                inset 0 0 25px rgba(190, 158, 106, 0.1);
+
+            transform: rotate(-1deg);
+
+            animation: letterAppear 1s ease both;
+        }
+
+        /* Paper border */
+
+        .letter-paper::before {
+            content: "";
+            position: absolute;
+            inset: 6px;
+
+            border: 1px solid rgba(194, 166, 121, 0.25);
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           SUNFLOWER DECORATION
+        ========================= */
+
+        .letter-sunflower {
+            position: absolute;
+
+            width: 125px;
+            height: 125px;
+
+            object-fit: contain;
+
+            top: -35px;
+            right: -30px;
+
+            z-index: 5;
+
+            filter: drop-shadow(
+                0 4px 5px rgba(80, 70, 40, 0.12)
+            );
+
+            pointer-events: none;
+        }
+
+        /* =========================
+           LETTER CONTENT
+        ========================= */
+
+        .letter-content {
+            position: relative;
+            z-index: 2;
+
+            font-family: 'Patrick Hand', cursive;
+            color: #245a91;
+
+            font-size: 17px;
+            line-height: 1.65;
+            letter-spacing: 0.2px;
+        }
+
+        .letter-greeting {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #15559c;
+        }
+
+        .letter-content p {
+            margin-bottom: 17px;
+        }
+
+        .letter-content .highlight {
+            color: #15559c;
+            font-weight: 600;
+        }
+
+        /* =========================
+           LETTER SIGNATURE
+        ========================= */
+
+        .letter-signature {
+            margin-top: 22px;
+
+            font-family: 'Patrick Hand', cursive;
+            font-size: 20px;
+
+            color: #205d9c;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .letter-signature .signature-heart {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 25px;
+            color: #2a6eae;
+        }
+
+        /* =========================
+           ENVELOPE DECORATION
+        ========================= */
+
+        .envelope {
+            position: absolute;
+
+            width: 175px;
+            height: 120px;
+
+            right: -75px;
+            bottom: 25px;
+
+            background: #8bbce9;
+            border: 1px solid #6fa3d5;
+
+            box-shadow: 0 6px 15px rgba(45, 91, 145, 0.18);
+
+            transform: rotate(12deg);
+
+            z-index: 6;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        /* Envelope flap */
+
+        .envelope::before {
+            content: "";
+
+            position: absolute;
+
+            top: -45px;
+            left: 0;
+
+            width: 0;
+            height: 0;
+
+            border-left: 87px solid transparent;
+            border-right: 87px solid transparent;
+            border-top: 90px solid #a6ccef;
+
+            z-index: 2;
+        }
+
+        .envelope-heart {
+            position: relative;
+            z-index: 3;
+
+            font-size: 30px;
+            color: #f4faff;
+
+            margin-top: 22px;
+        }
+
+        /* =========================
+           SHELL DECORATION
+        ========================= */
+
+        .shell-decoration {
+            position: absolute;
+
+            bottom: 12px;
+            left: 12%;
+
+            font-size: 42px;
+            color: #f3d9b9;
+
+            transform: rotate(-20deg);
+
+            filter: drop-shadow(
+                0 3px 4px rgba(80, 70, 40, 0.12)
+            );
+
+            z-index: 2;
+        }
+
+        /* =========================
+           SMALL FLOWERS
+        ========================= */
+
+        .flower-decoration {
+            position: absolute;
+
+            color: #e3b62d;
+            font-size: 25px;
+            opacity: 0.85;
+
+            pointer-events: none;
+        }
+
+        .flower-one {
+            top: 12%;
+            left: 8%;
+        }
+
+        .flower-two {
+            right: 7%;
+            bottom: 20%;
+        }
+
+        .flower-three {
+            left: 15%;
+            bottom: 8%;
+        }
+
+        /* =========================
+           NEXT PAGE BUTTON
+        ========================= */
+
+        .letter-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 25px auto 0;
+            padding: 0 20px;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .letter-footer {
+            text-align: center;
+
+            margin-top: 30px;
+            padding: 0 15px;
+
+            font-family: 'Patrick Hand', cursive;
+            font-size: 18px;
+
+            color: #245d96;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .letter-footer span {
+            color: #e0ae22;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes letterAppear {
+            from {
+                opacity: 0;
+                transform: translateY(25px) rotate(-3deg);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(-1deg);
+            }
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .letter-container {
+                padding: 45px 35px 35px;
+            }
+
+            .letter-paper {
+                max-width: 520px;
+                padding: 40px 40px 30px;
+            }
+
+            .letter-content {
+                font-size: 16px;
+            }
+
+            .letter-sunflower {
+                width: 105px;
+                height: 105px;
+            }
+
+            .envelope {
+                width: 140px;
+                height: 100px;
+                right: -45px;
+            }
+
+            .envelope::before {
+                border-left-width: 70px;
+                border-right-width: 70px;
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .letter-page {
+                background-attachment: scroll;
+            }
+
+            .letter-container {
+                padding: 45px 22px 25px;
+            }
+
+            .letter-paper {
+                max-width: 430px;
+                min-height: auto;
+
+                padding: 38px 25px 30px;
+
+                transform: rotate(-0.5deg);
+            }
+
+            .letter-content {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .letter-greeting {
+                font-size: 20px;
+                margin-bottom: 18px;
+            }
+
+            .letter-content p {
+                margin-bottom: 15px;
+            }
+
+            .letter-sunflower {
+                width: 85px;
+                height: 85px;
+
+                top: -22px;
+                right: -12px;
+            }
+
+            .letter-signature {
+                font-size: 18px;
+            }
+
+            .envelope {
+                width: 100px;
+                height: 75px;
+
+                right: -15px;
+                bottom: -20px;
+
+                transform: rotate(10deg);
+            }
+
+            .envelope::before {
+                top: -35px;
+
+                border-left-width: 50px;
+                border-right-width: 50px;
+                border-top-width: 65px;
+            }
+
+            .envelope-heart {
+                font-size: 23px;
+            }
+
+            .shell-decoration {
+                font-size: 30px;
+
+                left: 5%;
+                bottom: -30px;
+            }
+
+            .flower-one {
+                top: 8%;
+                left: 3%;
+            }
+
+            .flower-two {
+                right: 2%;
+                bottom: 15%;
+            }
+
+            .flower-three {
+                left: 10%;
+                bottom: 5%;
+            }
+
+            .letter-next {
+                margin-top: 30px;
+            }
+
+            .letter-footer {
+                margin-top: 30px;
+                font-size: 16px;
+            }
+        }
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .letter-container {
+                padding: 35px 15px 25px;
+            }
+
+            .letter-paper {
+                padding: 35px 20px 28px;
+            }
+
+            .letter-content {
+                font-size: 15px;
+            }
+
+            .letter-greeting {
+                font-size: 18px;
+            }
+
+            .letter-sunflower {
+                width: 72px;
+                height: 72px;
+            }
+
+            .envelope {
+                right: -10px;
+            }
+        }
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .letter-paper {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="letter-page">
+
+        <!-- =========================
+             SHARED NAVBAR
+        ========================= -->
+
+        <header class="navbar">
+
+            <a href="welcome.html" class="nav-brand">
+
+                <span class="brand-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <span>For My Abir ♡</span>
+
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="welcome.html">Home</a>
+
+                <a href="story.html">Story</a>
+
+                <a href="letter.html" class="active">Letter</a>
+
+                <a href="memories.html">Memories</a>
+
+                <a href="surprises.html">Surprises</a>
+
+                <a href="forever.html">Forever</a>
+
+            </nav>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </header>
+
+        <!-- Navbar blur layer -->
+        <div class="blur-layer" id="blurLayer"></div>
+
+
+        <!-- =========================
+             LETTER CONTENT
+        ========================= -->
+
+        <main class="letter-container">
+
+            <!-- Decorative flowers -->
+
+            <span class="flower-decoration flower-one">✿</span>
+            <span class="flower-decoration flower-two">✿</span>
+            <span class="flower-decoration flower-three">✿</span>
+
+
+            <!-- Main letter paper -->
+
+            <article class="letter-paper">
+
+                <!-- Letter text -->
+
+                <div class="letter-content">
+
+                    <div class="letter-greeting">
+                        To my Abir,
+                    </div>
+
+                    <p>
+                        I don't know how to put into words
+                        what you mean to me.
+                        <br>
+
+                        You are my calm in the little things,
+                        my happiness in the favorite person,
+                        my safe place, my favorite forever.
+                    </p>
+
+                    <p>
+                        With you, even the ordinary days
+                        feel special. You make me laugh,
+                        you understand me, you stay.
+                        <br>
+
+                        And you love me in the most beautiful way.
+                    </p>
+
+                    <p>
+                        I'm so lucky to have you in my life.
+                        Today and always, I choose you.
+                    </p>
+
+                    <p>
+                        Happy Boyfriend's Day, Abir ♡
+                    </p>
+
+                </div>
+
+
+                <!-- Signature -->
+
+                <div class="letter-signature">
+
+                    Always yours,
+
+                    <br>
+
+                    <span class="signature-heart">♡</span>
+
+                </div>
+
+
+                <!-- Envelope -->
+
+                <div class="envelope" aria-hidden="true">
+
+                    <span class="envelope-heart">♡</span>
+
+                </div>
+
+                <!-- Shell decoration -->
+
+                <div class="shell-decoration" aria-hidden="true">
+                    <i class="fa-solid fa-shell"></i>
+                </div>
+
+            </article>
+
+        </main>
+
+
+        <!-- NEXT PAGE BUTTON -->
+
+        <div class="letter-next">
+
+            <a style="color: #15559c;" href="surprises.html" class="welcome-button">
+                <span>Surprises</span>
+                <span class="welcome-arrow">→</span>
+            </a>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <footer class="letter-footer">
+
+            Made with <span>♥</span> for my Abir
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         SHARED NAVBAR JAVASCRIPT
+    ========================= -->
+
+    <script src="../global.js"></script>
+
+</body>
+
+</html>
